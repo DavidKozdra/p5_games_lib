@@ -37,12 +37,6 @@ class main
         {
             this.Trigger[i].Update();
         }
-
-        var health_var;
-        console.log(this.player.ammo);
-        
-        
-        
     }
     
     RenderAll()
@@ -63,7 +57,7 @@ class main
     }
     CheckCollision(loc1,rad1,loc2, rad2)
     {
-        
+        // should take 2 game objects and call on collide
         if(Math.pow(loc1[0]-loc2[0],2) < rad1+ rad2 && Math.pow(loc1[1]-loc2[1],2) < rad1 + rad2 &&  Math.pow(loc1[2]-loc2[2],2) < rad1+rad2)
         {
             return true;
@@ -125,13 +119,11 @@ class main
     KeyDown(event)
     {
         this.Keys[String.fromCharCode(event.keyCode)] = true;
-        //console.log(String.fromCharCode(event.keyCode) +" should be true - "+this.Keys[String.fromCharCode(event.keyCode)]);
     }
     
     KeyUp(event)
     {
         this.Keys[String.fromCharCode(event.keyCode)] = false;
-        //console.log(String.fromCharCode(event.keyCode) +" should be false - "+this.Keys[String.fromCharCode(event.keyCode)]);
     }
     
     MouseClick(event)
@@ -169,50 +161,8 @@ class main
     for(let i =0; i< 30; i++){
 
         for(let j =0; j< 30; j++){
-            // 0 draw green tile grass 
+            // start 
 
-            
-
-            if(this.myMap[i][j] == 0){
-                //	this.CreateObject(1,Wall,[j*2,2,i*2],[0,0,0]);
-                
-            }
-
-            if(this.myMap[i][j] == 1){
-                
-                this.CreateObject(1,Wall,[j*2,0,i*2],[0,0,0]);
-            }
-            if(this.myMap[i][j] == 2){
-
-                this.CreateObject(1,Camera,[j*2,0,-i*2],[0,0,0]);
-                
-            }
-            if(this.myMap[i][j] == 3){
-                this.CreateObject(1,TankEnemy,[j*2,.5,i*2], [0,0,0]);
-
-            }
-            if(this.myMap[i][j] == 4){
-                this.CreateObject(1,RandEnemy,[j*2,.5,i*2], [0,0,0]);
-
-
-            }
-
-            if(this.myMap[i][j] == 5){
-                this.CreateObject(1,PathEnemy,[j*2,.5,i*2], [0,0,0]);
-
-            }
-            if(this.myMap[i][j] == 6){
-                this.CreateObject(1,Goal,[j*2,.51,i*2], [0,0,0]);
-
-            }
-
-            if(this.myMap[i][j] == 7){
-                this.CreateObject(1,Crate,[j*2,-.3,i*2], [0,0,0]);
-            }
-
-            if(this.myMap[i][j] == 8){
-                //this.CreateObject(1,BossEnemy,[j*2,-.1,i*2], [0,0,0]);
-            }
         }
     }
 
@@ -222,16 +172,6 @@ class main
     }
     
 
-
-    rand(min,max){
-
-        return Math.floor(Math.random()*(max-min+1)+min);
-    }
-
-    randf(min, max){
-
-        return Math.random()*(max-min)+min;
-    }
 
     Changediff(val){
         this.diff = val;
@@ -256,7 +196,7 @@ class main
     {
         m.UpdateAll();
         m.RenderAll();
-        requestAnimationFrame(main.MainLoop);
     }
 
 }
+

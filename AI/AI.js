@@ -11,6 +11,7 @@ class AI extends Playing_Agent {
   constructor(characterController, team) {
 
     const AIState = {
+      
     };
     super(team[0], team);
 
