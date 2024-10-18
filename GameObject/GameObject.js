@@ -21,7 +21,7 @@ class GameObject {
           }
       }
       return false;
-  }
+    }
 
     onCollision(other) {
       // Implement collision logic in subclasses

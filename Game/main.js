@@ -6,7 +6,7 @@ class main
         this.Visual = [];
         this.Solid = [];
         this.Trigger = [];
-        this.ObjectCounter = 0;			
+        this.ObjectCounter = 0;
 
         this.pointCounter =0;
 
