@@ -1,15 +1,16 @@
 import { GameObject } from './GameObject.js';
 
 
-class AI extends Entity {
+class Knight_AI extends AI {
+
   constructor(Controlled_Entity, team) {
-
-    const AIState = {
-
-    };
     super(team[0], team);
 
-    
+    this.KnightAIState = {
+        swinging:swing(),
+        idle:nothing(),
+        left:Controlled_Entity.applyMovement()
+    };
     this.lastAttackTime = 0; // Initialize lastAttackTime
   }
 
